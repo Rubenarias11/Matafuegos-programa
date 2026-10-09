@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lector de extintores</title>
+<link rel="stylesheet" href="style.css"></head><body><div class="app">
+<h1>Lector de extintores</h1>
+<div id="visor"><video id="v" playsinline muted></video><span class="vacio">Tocá "Escanear con cámara"<br>y apuntá al QR del matafuego</span>
+<i class="m a"></i><i class="m b"></i><i class="m c"></i><i class="m d"></i></div>
+<div class="botones">
+  <button id="bCam">Escanear con cámara</button>
+  <label class="btn sec">Foto del QR<input id="fQR" type="file" accept="image/*" capture="environment" hidden></label>
+</div>
+<p id="estado">Listo para escanear.</p>
+<div class="hoja">
+  <form id="form" hidden><h2>Datos leídos</h2><p id="aviso"></p></form>
+  <h2>Extintores guardados</h2><div id="lista"></div>
+</div></div>
+<canvas id="cv" hidden></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.min.js"></script>
+<script src="script.js"></script></body></html>
