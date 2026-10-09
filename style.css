@@ -27,3 +27,4 @@ input{width:100%;padding:11px;margin:2px 0 10px;border:1px solid #b9c5d1;border-
 .fila small{display:block;color:#5b6b7c}
 .fila b.e{font-size:13px}
 .fila img{width:46px;height:46px;object-fit:cover;border-radius:8px}
+.enlace{display:grid;grid-template-columns:1fr auto;gap:10px;padding:0 18px 10px}.enlace input{margin:0;background:#fff}
