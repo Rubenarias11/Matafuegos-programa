@@ -1,0 +1,29 @@
+:root{--mar:#0e2238;--mar2:#17314d;--hoja:#eef2f6;--nar:#ff6a13;--ok:#1f9d55;--aviso:#e6a100;--mal:#d33;--tx:#14202e}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.4 "Segoe UI",Tahoma,sans-serif;background:var(--mar);color:#fff}
+.app{max-width:520px;margin:0 auto;min-height:100vh}
+h1{margin:0;padding:16px 18px 8px;font-size:22px;font-weight:600;letter-spacing:.3px}
+#visor{position:relative;margin:8px 18px;aspect-ratio:1/1;background:var(--mar2);border-radius:22px;overflow:hidden;display:grid;place-items:center;color:#8fa6bf;text-align:center}
+#visor video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+#visor.on video{display:block}#visor.on .vacio{display:none}
+.m{position:absolute;width:44px;height:44px;border:5px solid var(--nar)}
+.m.a{top:18px;left:18px;border-right:0;border-bottom:0;border-top-left-radius:14px}
+.m.b{top:18px;right:18px;border-left:0;border-bottom:0;border-top-right-radius:14px}
+.m.c{bottom:18px;left:18px;border-right:0;border-top:0;border-bottom-left-radius:14px}
+.m.d{bottom:18px;right:18px;border-left:0;border-top:0;border-bottom-right-radius:14px}
+.botones{display:grid;grid-template-columns:1.3fr 1fr;gap:10px;padding:10px 18px}
+button,.btn{font:inherit;font-weight:600;border:0;border-radius:14px;padding:14px;text-align:center;cursor:pointer;background:var(--nar);color:#fff}
+.btn.sec,button.sec{background:var(--mar2);color:#fff;border:1px solid #3a5878}
+button:focus-visible,.btn:focus-within,input:focus-visible{outline:3px solid #fff;outline-offset:2px}
+#estado{margin:0 18px;padding:12px 14px;border-radius:12px;background:var(--mar2);font-weight:600}
+#estado.ok{background:var(--ok)}#estado.mal{background:var(--mal)}
+.hoja{background:var(--hoja);color:var(--tx);margin-top:16px;border-radius:26px 26px 0 0;padding:18px;min-height:40vh}
+.hoja h2{margin:0 0 10px;font-size:18px}
+label{font-size:13px;color:#4a5b6d;display:block}
+input{width:100%;padding:11px;margin:2px 0 10px;border:1px solid #b9c5d1;border-radius:10px;font:inherit;background:#fff;color:var(--tx)}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fila{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#fff;border-radius:12px;padding:10px 12px;margin-bottom:8px;border-left:8px solid #999}
+.fila.VIGENTE{border-color:var(--ok)}.fila.POR_VENCER{border-color:var(--aviso)}.fila.VENCIDO{border-color:var(--mal)}
+.fila small{display:block;color:#5b6b7c}
+.fila b.e{font-size:13px}
+.fila img{width:46px;height:46px;object-fit:cover;border-radius:8px}
