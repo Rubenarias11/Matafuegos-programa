@@ -1,6 +1,6 @@
 // Cuando tengas el Apps Script de Google Sheets, pegá acá su dirección (termina en /exec).
 // GET ?url=... debe devolver los datos del QR; POST recibe lo que se guarda. Vacío = solo guarda en este navegador.
-const SCRIPT_URL = "";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzcoCykWdMAFdhMG4LB8v4c5zAZIrqb9tMa5Pdy4GR8O-Fca63Bfq53kj3ZKSV6lz2dGg/exec";
 const CAMPOS=[["nro_extintor","Nº de extintor","text"],["fabricante","Fabricante","text"],["agente_extintor","Agente extintor","text"],["capacidad_kg","Capacidad (kg)","number"],["fecha_fabricacion","Fabricación","month"],["venc_vida_util","Vence vida útil","month"],["nro_tarjeta","Nº de tarjeta","text"],["empresa_recargadora","Recargadora","text"],["fecha_mantenimiento","Mantenimiento","month"],["venc_mantenimiento","Vence mantenimiento","month"],["venc_ph","Vence prueba hidráulica","month"]];
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
