@@ -29,6 +29,7 @@ async function ciclo(){
 }
 $("bCam").onclick=async()=>{
   if(stream){parar();return msg("Escaneo detenido.")}
+  msg("Abriendo la cámara… si Chrome te pide permiso, tocá Permitir.");
   try{
     stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:"environment"}});
     $("v").srcObject=stream;await $("v").play();$("visor").classList.add("on");$("bCam").textContent="Detener";msg("Buscando el QR…");ciclo();
@@ -41,6 +42,7 @@ $("fQR").onchange=async e=>{
   catch(err){msg("No se pudo leer esa imagen.","mal")}
   e.target.value="";
 };
+$("bUrl").onclick=()=>{const u=$("urlManual").value.trim();if(u)exito(u)};
 function exito(t){
   if(!/^https?:\/\//.test(t))return msg("El QR se leyó, pero no es un enlace web: "+t.slice(0,60),"mal");
   msg("QR leído correctamente","ok");abrir(t);
@@ -60,13 +62,12 @@ async function abrir(url){
   if(ex){$("form").hidden=true;return msg("Ese QR ya estaba guardado: "+ex.fabricante+" Nº "+ex.nro_extintor,"ok")}
   CAMPOS.forEach(([k])=>$("f_"+k).value="");
   const a=document.createElement("a");a.href=url;a.target="_blank";a.rel="noopener";a.textContent="Ver la página oficial";a.style.color="#0b57d0";
-  $("aviso").replaceChildren(a," y completá los datos.");$("form").hidden=false;
+  $("aviso").replaceChildren(a," y completá los datos.");$("form").hidden=false;$("form").scrollIntoView({behavior:"smooth"});
   if(SCRIPT_URL){
     try{const r=await(await fetch(SCRIPT_URL+"?url="+encodeURIComponent(url))).json();
       CAMPOS.forEach(([k])=>{if(r[k])$("f_"+k).value=r[k]});msg("QR leído y datos cargados. Revisalos y guardá.","ok")}
     catch(e){msg("QR leído. No se pudieron traer los datos solos: completalos a mano.","ok")}
   }
-  $("form").scrollIntoView({behavior:"smooth"});
 }
 $("foto").onchange=e=>{
   const f=e.target.files[0];if(!f)return;const im=new Image();
