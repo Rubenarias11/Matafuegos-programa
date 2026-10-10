@@ -28,3 +28,10 @@ input{width:100%;padding:11px;margin:2px 0 10px;border:1px solid #b9c5d1;border-
 .fila b.e{font-size:13px}
 .fila img{width:46px;height:46px;object-fit:cover;border-radius:8px}
 .enlace{display:grid;grid-template-columns:1fr auto;gap:10px;padding:0 18px 10px}.enlace input{margin:0;background:#fff}
+.tarjeta{background:#fff;border-radius:12px;margin-bottom:8px;border-left:8px solid #999;padding:10px 12px}
+.tarjeta.VIGENTE{border-color:var(--ok)}.tarjeta.POR_VENCER{border-color:var(--aviso)}.tarjeta.VENCIDO{border-color:var(--mal)}
+.tarjeta summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:8px;align-items:center;font-weight:600}
+.tarjeta ul,#resumen{margin:8px 0 0;padding-left:18px}.tarjeta li,#resumen li{margin-bottom:4px}
+.tarjeta img{width:100%;margin-top:8px;border-radius:10px}
+.badge{font-size:12px;font-weight:700;color:#fff;border-radius:8px;padding:2px 8px;white-space:nowrap;background:#667}
+.badge.VIGENTE{background:var(--ok)}.badge.POR_VENCER{background:var(--aviso);color:#000}.badge.VENCIDO{background:var(--mal)}
