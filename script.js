@@ -1,5 +1,5 @@
 // Dirección (termina en /exec) de tu Google Apps Script. Vacío = solo se guarda en este navegador.
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzcoCykWdMAFdhMG4LB8v4c5zAZIrqb9tMa5Pdy4GR8O-Fca63Bfq53kj3ZKSV6lz2dGg/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzh5R_nbtB_oO3VjrSWS5xsyBs3ey75XWP_T_b5nYjU3UQTZzzw5R3EXvs8M-skH1Tgug/exec";
 
 // [clave, título (igual que en la página de la AGC), e = dato del extintor / s = dato de la estampilla, 1 = fecha MM/AAAA]
 const CAMPOS = [
